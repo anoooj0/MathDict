@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathDict</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📐 MathDict</h1>
+            <div class="controls">
+                <button id="startBtn" class="btn btn-primary">🎤 Start Dictation</button>
+                <button id="stopBtn" class="btn btn-secondary" disabled>⏹ Stop</button>
+                <button id="clearBtn" class="btn btn-danger">🗑 Clear</button>
+                <button id="saveBtn" class="btn btn-success">💾 Save Note</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="editor-section">
+                <h2>LaTeX Editor</h2>
+                <div id="status" class="status">Ready to dictate...</div>
+                <textarea id="latexInput" placeholder="Your LaTeX notes will appear here...&#10;&#10;You can also type or edit directly.&#10;&#10;Example voice commands:&#10;- 'x squared plus 2x minus 3'&#10;- 'fraction numerator x over denominator 2'&#10;- 'integral from 0 to pi of sine x dx'&#10;- 'plot y equals x squared'"></textarea>
+            </div>
+
+            <div class="preview-section">
+                <h2>Preview</h2>
+                <div id="preview" class="preview-box"></div>
+                <div id="graphContainer" class="graph-container"></div>
+            </div>
+        </div>
+
+        <div class="saved-notes">
+            <h2>Saved Notes</h2>
+            <div id="notesList" class="notes-list"></div>
+        </div>
+
+        <div class="help-section">
+            <details>
+                <summary>Voice Commands Guide</summary>
+                <div class="help-content">
+                    <h3>Basic Operations</h3>
+                    <ul>
+                        <li>"x squared" → x²</li>
+                        <li>"x cubed" → x³</li>
+                        <li>"x to the power of n" → xⁿ</li>
+                        <li>"square root of x" → √x</li>
+                    </ul>
+                    <h3>Fractions</h3>
+                    <ul>
+                        <li>"fraction numerator x over denominator 2" → x/2</li>
+                        <li>"x over 2" → x/2</li>
+                    </ul>
+                    <h3>Calculus</h3>
+                    <ul>
+                        <li>"integral of x dx" → ∫x dx</li>
+                        <li>"integral from 0 to 1 of x dx" → ∫₀¹ x dx</li>
+                        <li>"derivative of x squared" → d/dx x²</li>
+                        <li>"partial derivative" → ∂</li>
+                    </ul>
+                    <h3>Greek Letters</h3>
+                    <ul>
+                        <li>"alpha", "beta", "gamma", "delta", "theta", "pi", "sigma", etc.</li>
+                    </ul>
+                    <h3>Graphing</h3>
+                    <ul>
+                        <li>"plot y equals x squared" → generates graph</li>
+                        <li>"graph sine x" → generates graph</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/function-plot@1.23.3/dist/function-plot.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
