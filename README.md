@@ -1,4 +1,4 @@
-# 📐 Math Voice Notes
+# MathDict
 
 A web-based voice dictation app that allows you to write mathematical notes by speaking. Converts spoken math terms into LaTeX format with live preview and graphing capabilities.
 
